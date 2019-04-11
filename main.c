@@ -1,17 +1,18 @@
-void caesarCipher(char* a, int b);
-
-#include <stdio.h>
-
-int main(void) {
-
-int b = 1;
-char letter[101];
-int text;
-
-//ask user for text to encrypt
-printf("Enter the text you wish to encrypt: ");
-
-scanf("%c ")
+#include<stdio.h>
  
-
-}
+int main()
+{
+	char cipher[101], a;
+	int i, key;
+	
+	printf("Please enter a message to encrypt: ");
+	
+	// figure out how to get it?
+	
+	printf("Enter key: ");
+	
+	scanf("%d", &key);
+	
+	for(i = 1; cipher[i] != '\0'; ++i){ // starts at a ,null, increments +1
+	a = cipher[i];
+	
