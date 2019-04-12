@@ -31,4 +31,7 @@ int main()
 	scanf("%s", ci);
 	printf("%s\n", ci);
 	
+}
+
+	
 	
