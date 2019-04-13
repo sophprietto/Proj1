@@ -2,18 +2,13 @@
  
 int main()
 {
-	char ci[101], a;
+	char ci[101] = {"hello"}, a;
 	int i, key = 1;
 	
 	printf("Please enter a message to encrypt: ");
 	
-	gets(ci);
 	
-	printf("Enter key: ");
-	
-	scanf("%d", &key);
-	
-	for(i = 0; i < 200 && ci[i] != '\0'; ++i){
+	for(i = 0; ci[i] != '\0'; i++){
 	    
         if ((ci[i] > 96) && (ci[i] < 123)){
     
@@ -21,7 +16,7 @@ int main()
     }
 }
 
-	if((ci[i] > 65 && ci[i] < 91) {
+	if((ci[i] > 65 && ci[i] < 91)) {
 	    
 	  
 	    ci[i] = ci[i] + (key % 26);
@@ -32,6 +27,5 @@ int main()
 	printf("%s\n", ci);
 	
 }
-
 	
 	
