@@ -2,8 +2,9 @@
  
 int main()
 {
-	char ci[101] = {"hello"}, a;
+	char ci[500] = {"hello"}, a;
 	int i, key = 1;
+	
 	
 	printf("Please enter a message to encrypt: ");
 	
@@ -14,7 +15,7 @@ int main()
     
             ci[i] = ci[i]-32;
     }
-}
+
 
 	if((ci[i] > 65 && ci[i] < 91)) {
 	    
@@ -22,6 +23,8 @@ int main()
 	    ci[i] = ci[i] + (key % 26);
 	       
 	   }
+   }
+
 	
 	scanf("%s", ci);
 	printf("%s\n", ci);
