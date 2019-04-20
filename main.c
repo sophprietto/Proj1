@@ -3,8 +3,7 @@ void subdecrypt (char ci[]);
 
 #include<stdio.h>
 
-void main ()
-{
+void main () {
   char ci[500];
   int i, funct;
 
@@ -25,9 +24,7 @@ void main ()
     }
 }
 
-void
-subencrypt (char ci[])
-{
+void subencrypt (char ci[]) {
 
   int i, key;
 
@@ -46,7 +43,7 @@ subencrypt (char ci[])
 	        ci[i] = ci[i] - 26;
 	    }
       }
-	     else if ((ci[i]))
+	     else if ((ci[i]) )
 	    
 
 	}
@@ -66,7 +63,7 @@ void subdecrypt (char ci[]) {
 
       if ((ci[i] > 96) && (ci[i] < 123)) {		
 
-	  ci[i] = ci[i] - 32 - key;	
+	  ci[i] = ci[i] - 32;	
 
 	  if ((ci[i] > 65 && ci[i] < 91)) {	
             ci[i] = ci[i] - key;
