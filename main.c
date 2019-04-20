@@ -1,17 +1,20 @@
 #include<stdio.h>
  
-int main()
+void main()
 {
-	char ci[500] = {"hello"}, a;
-	int i, key = 1;
+	char ci[500], a;
+	int i, key = ;
 	
 	
 	printf("Please enter a message to encrypt: ");
+	scanf("%s", &ci);
 	
+	printf("Please Enter a key: ");
+	scanf("%d", &key);
 	
 	for(i = 0; ci[i] != '\0'; i++){
 	    
-        if ((ci[i] > 96) && (ci[i] < 123)){
+        if ((ci[i] > 96) && (ci[i] < 123)){ // 
     
             ci[i] = ci[i]-32;
     }
@@ -26,9 +29,7 @@ int main()
    }
 
 	
-	scanf("%s", ci);
-	printf("%s\n", ci);
+
+	printf("%s", ci);
 	
 }
-	
-	
