@@ -3,9 +3,9 @@ void subdecrypt (char ci[]);
 
 #include<stdio.h>
 
-void main () {
+int main (void) {
   char ci[500];
-  int i, funct;
+  int funct;
 
 
   printf ("Please enter a message to encrypt: ");
@@ -43,8 +43,7 @@ void subencrypt (char ci[]) {
 	        ci[i] = ci[i] - 26;
 	    }
       }
-	     else if ((ci[i]) )
-	    
+
 
 	}
 
@@ -74,5 +73,7 @@ void subdecrypt (char ci[]) {
       }
     }
 }
+
+
   printf ("%s", ci);
 }
