@@ -4,17 +4,17 @@ void subdecrypt (char ci[]); //this function will be called to dectrypt a rotati
 #include<stdio.h>
 
 int main (void) {
-  char ci[500]; //"ci[500]" represents a string of characters
+  char ci[100]; //"ci[100]" represents a string of characters
   int funct; // this will call certain functions within the switch case
 
 
   printf ("Please enter a message to encrypt: "); // prompts entry of the message to encrypt
   scanf ("%s", &ci); // scans the message
 
-  printf ("Choose function: "); // prompts choice of function to use after input of text
+  printf ("\nChoose function: "); // prompts choice of function to use after input of text
   scanf ("%d", &funct); //scans message
   
-/* the switch case calls the function whihc will be used to encrypt of decrypt the message inputted by the user*/
+/* the switch case calls the function which will be used to encrypt of decrypt the message inputted by the user*/
 
   switch (funct) { 
     case 0:
@@ -30,30 +30,27 @@ void subencrypt (char ci[]) {
 
   int i, key;
 
-  printf ("Enter key: ");
-  scanf ("%d", &key);
+  printf ("\nEnter key: "); // prompts input of number whichb the cipher will rotate by
+  scanf ("%d", &key); // scans input
 
-  for (i = 0; ci[i] != '\0'; i++) {
+  for (i = 0; ci[i] != '\0'; i++) { 
 
-      if ((ci[i] > 96) && (ci[i] < 123)) {			
+    if ((ci[i] >= 97) && (ci[i] <= 122)) { // identifies lowercase ASCII characters
+        ci[i] += key - 32; // changes lowercase to uppercase
 
-	  ci[i] = ci[i] - 32 + key;
-
-	 
 	    if ((ci[i]) > 90) {
-	        
-	        ci[i] = ci[i] - 26;
+	        ci[i] -= 26;
 	    }
 	    
-    else if(ci[i] >= 65 && ci[i] <= 90){
-     ci[i] = ci[i] + key;
- }
-    if (ci[i] > 65) {
-        ci[i] = ci[i] - 26;
+    else if(ci[i] >= 65 && ci[i] <= 90) {
+     ci[i] += key;
     }
-	}
+    if (ci[i] > 90) {
+        ci[i] -= 26 ;
+    }
+}
 
-  printf ("%s", ci);
+  printf ("\nEncrypted text: %s", ci);
 
 }
 }
@@ -61,7 +58,7 @@ void subdecrypt (char ci[]) {
 
   int i, key;
 
-  printf ("Enter key: ");
+  printf ("\nEnter key: ");
   scanf ("%d", &key);
 
   for (i = 0; ci[i] != '\0'; i++) {
@@ -79,6 +76,6 @@ void subdecrypt (char ci[]) {
       }
     }
 }
-  printf ("%s", ci);
+  printf ("\nDecrypted text: %s", ci);
  
   }
