@@ -1,3 +1,7 @@
+/*
+
+*/
+
 void subencrypt (char ci[]); //this funcion will be called to encrypt a rotation cypher
 void subdecrypt (char ci[]); //this function will be called to dectrypt a rotation cypher
 
@@ -41,19 +45,17 @@ void subencrypt (char ci[]) {
 	    if ((ci[i]) > 90) {
 	        ci[i] -= 26;
 	    }
-	    
     else if(ci[i] >= 65 && ci[i] <= 90) {
      ci[i] += key;
     }
     if (ci[i] > 90) {
         ci[i] -= 26 ;
     }
+} 
+printf ("\nEncrypted text: %s", ci); 
+    }
 }
 
-  printf ("\nEncrypted text: %s", ci);
-
-}
-}
 void subdecrypt (char ci[]) {
 
   int i, key;
@@ -63,19 +65,22 @@ void subdecrypt (char ci[]) {
 
   for (i = 0; ci[i] != '\0'; i++) {
 
-      if ((ci[i] > 96) && (ci[i] < 123)) {		
+    if (ci[i] >= 97 && ci[i] <= 122) {		
+        ci[i] = ci[i] - 32;	
 
-	  ci[i] = ci[i] - 32;	
-
-	  if ((ci[i] > 65 && ci[i] < 91)) {	
-            ci[i] = ci[i] - key;
-
-	  if ((ci[i]) < 65) {
+	   if (ci[i] < 65) {
             ci[i] = ci[i] + 26;
 	    }
       }
+      else if(ci[i] >= 65 && ci[i] <= 90) {
+          ci[i] = ci[i] - key;
+          
+          if(ci[i] < 65) {
+              ci[i] = ci[i] + 26;
+          }
+      }
     }
-}
+
   printf ("\nDecrypted text: %s", ci);
  
   }
