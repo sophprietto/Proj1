@@ -9,14 +9,14 @@ void subencrypt (char ci[]); // this function when called will encrypt a substit
 #include<stdio.h>
 
 int main (void) {
-  char ci[100]; //"ci[100]" represents a string of characters
+  char ci[500]; //"ci[100]" represents a string of characters
   int funct; // this will call certain functions within the switch case
   
-  printf ("Please choose a function to execute: \n- 0 for rotation encryption \n- 1 for rotation decryption \n- 2 for substitution encryption \n- 3 for substitution decryption"); // prompts choice of function to use after input of text
-  scanf ("%d", &funct); //scans message
+  printf ("Please choose a function to execute: "); // prompts choice of function to use after input of text
+  scanf ("%d\n", &funct); //scans message
 
   printf ("\nPlease enter message: "); // prompts entry of the message 
-  scanf ("%s", &ci); // scans the message
+  scanf ("%[^\n]s", ci); // scans the message
 
   
   
@@ -72,7 +72,7 @@ void rotdecrypt (char ci[]) {
   scanf ("%d", &key);
 
   for (i = 0; ci[i] != '\0'; i++) {
-
+      
     if (ci[i] >= 97 && ci[i] <= 122) {		
         ci[i] = ci[i] - key - 32 ;	
 
@@ -88,6 +88,7 @@ void rotdecrypt (char ci[]) {
         ci[i] = ci[i] + 26;
         }
       }
+      
     }
 
   printf ("\nDecrypted text: %s", ci);
