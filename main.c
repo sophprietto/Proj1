@@ -12,7 +12,7 @@ int main (void) {
   int funct; // this will call certain functions within the switch case
 
 
-  printf ("Please enter a message to encrypt: "); // prompts entry of the message to encrypt
+  printf ("Please enter a message: "); // prompts entry of the message to encrypt/ decrypt
   scanf ("%s", &ci); // scans the message
 
   printf ("\nChoose function: "); // prompts choice of function to use after input of text
@@ -37,19 +37,19 @@ void subencrypt (char ci[]) {
   printf ("\nEnter key: "); // prompts input of number whichb the cipher will rotate by
   scanf ("%d", &key); // scans input
 
-  for (i = 0; ci[i] != '\0'; i++) { 
+  for (i = 0; ci[i] != '\0'; ++i) { 
 
-    if ((ci[i] >= 97) && (ci[i] <= 122)) { // identifies lowercase ASCII characters
-        ci[i] += key - 32; // changes lowercase to uppercase
+    if (ci[i] >= 97 && ci[i] <= 122) { // identifies lowercase ASCII characters
+        ci[i] = ci[i] + key - 32; // changes lowercase to uppercase
 
 	    if ((ci[i]) > 90) {
-	        ci[i] -= 26;
+	        ci[i] = ci[i] - 26;
 	    }
     else if(ci[i] >= 65 && ci[i] <= 90) {
-     ci[i] += key;
+     ci[i] = ci[i] + key;
     }
     if (ci[i] > 90) {
-        ci[i] -= 26 ;
+        ci[i] = ci[i] - 26 ;
     }
 } 
 printf ("\nEncrypted text: %s", ci); 
@@ -66,7 +66,7 @@ void subdecrypt (char ci[]) {
   for (i = 0; ci[i] != '\0'; i++) {
 
     if (ci[i] >= 97 && ci[i] <= 122) {		
-        ci[i] = ci[i] - 32;	
+        ci[i] = ci[i] - key - 32 ;	
 
 	   if (ci[i] < 65) {
             ci[i] = ci[i] + 26;
