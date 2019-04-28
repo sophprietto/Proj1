@@ -2,9 +2,9 @@
 
 */
 
-void rotencrypt (char ci[]); //this funcion will be called to encrypt a rotation cypher
-void rotdecrypt (char ci[]); //this function will be called to dectrypt a rotation cypher
-void subencrypt (char ci[]);
+void rotencrypt (char ci[]); //this funcion will be called to encrypt a rotation cipher
+void rotdecrypt (char ci[]); //this function will be called to dectrypt a rotation cipher
+void subencrypt (char ci[]); // this function when called will encrypt a substitution cipher
 
 #include<stdio.h>
 
@@ -12,7 +12,7 @@ int main (void) {
   char ci[100]; //"ci[100]" represents a string of characters
   int funct; // this will call certain functions within the switch case
   
-  printf ("Please choose a function to execute: "); // prompts choice of function to use after input of text
+  printf ("Please choose a function to execute: \n- 0 for rotation encryption \n- 1 for rotation decryption \n- 2 for substitution encryption \n- 3 for substitution decryption"); // prompts choice of function to use after input of text
   scanf ("%d", &funct); //scans message
 
   printf ("\nPlease enter message: "); // prompts entry of the message 
