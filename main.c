@@ -40,13 +40,13 @@ void rotencrypt (char ci[]) {
 
   int i, key;
 
-  printf ("\nEnter key: ");
+  printf ("\nEnter key: "); //decides the amount the cipher will rotate by
   scanf ("%d", &key);
 
   for (i = 0; ci[i] != '\0'; i++) {
 
     if (ci[i] >= 97 && ci[i] <= 122) { //identifies lowercase ASCII charcters	
-        ci[i] = ci[i] + key - 32 ; // changes lowercase ASCII characters to uppercase
+        ci[i] = ci[i] + key - 32 ; // changes lowercase ASCII characters to uppercase and rotates
 
 	   if (ci[i] > 90) {
             ci[i] = ci[i] - 26; //if characters exceed 90 (Z) the code will minus 26 to bring it back to an uppercase letter
@@ -67,20 +67,20 @@ void rotdecrypt (char ci[]) {
 
   int i, key;
 
-  printf ("\nEnter key: ");
+  printf ("\nEnter key: "); //decides the amount the cipher will rotate by
   scanf ("%d", &key);
 
   for (i = 0; ci[i] != '\0'; i++) {
 
-    if (ci[i] >= 97 && ci[i] <= 122) {		
-        ci[i] = ci[i] - key - 32 ;	
+    if (ci[i] >= 97 && ci[i] <= 122) {	
+        ci[i] = ci[i] - key - 32 ;	//converts lowercase ASCII to uppercase	and rotates 
 
         if (ci[i] < 65) {
-            ci[i] = ci[i] + 26;
+            ci[i] = ci[i] + 26; //adds 26 if character exceeds 65 (A), bring back into uppercase ASCII
 	    }
       }
   else if(ci[i] >= 65 && ci[i] <= 90) {
-          ci[i] = ci[i] - key;
+          ci[i] = ci[i] - key; //minuses key to rotate cipher
 
     if(ci[i] < 65) {
         ci[i] = ci[i] + 26;
@@ -89,7 +89,6 @@ void rotdecrypt (char ci[]) {
     }
   printf ("\nDecrypted text: %s", ci);
 }
-
   void subencrypt (char ci[]) {
 
       int i, key;
@@ -114,6 +113,4 @@ void rotdecrypt (char ci[]) {
   void subdecrypt (char ci[]){
       
   }
-  
-
   
