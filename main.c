@@ -1,7 +1,7 @@
 void rotencrypt (char ci[]); //this funcion will be called to encrypt a rotation cipher
 void rotdecrypt (char ci[]); //this function will be called to decrypt a rotation cipher
 void subencrypt (void); //this function when called will encrypt a substitution cipher
-void subdecrypt (char ci[]); //this function when called will decrypt a substitution cipher
+void subdecrypt (void); //this function when called will decrypt a substitution cipher
 
 #include<stdio.h>
 
@@ -9,13 +9,9 @@ int main (void) {
   char ci[500];
   int funct; 
   
-
   printf("Choose 0 for a rotation encryption, and 1 for decryption.\nChoose 2 for a substitution encryption, and 3 for a decryption.\n");
   printf("Please choose a function to execute: "); // prompts choice of function to use after input of text
   scanf("%d\n", &funct); //scans message
-
-  
-
 
 /* the switch case calls the function which will be used to encrypt of decrypt the message inputted by the user */
 
@@ -34,7 +30,7 @@ int main (void) {
       subencrypt ();
       break;// code exits after execution of function
     case 3: //calls the function which will decrypt a substitution cipher
-      subdecrypt (ci);
+      subdecrypt ();
       break; // code exits after execution of function
     }
 }
@@ -93,13 +89,14 @@ void rotdecrypt (char ci[]) {
   printf ("\nDecrypted text: %s", ci);
 }
   void subencrypt () {
+      
       char ci[500]; 
-    printf("\nPlease enter message: "); // prompts entry of the message 
-    scanf("%[^\n]s", ci); // scans the message
       int i, n;
       char cipheralphabet[26] = {"QWERTYUIOPASDFGHJKLZXCVBNM"};
       
-
+    printf("\nPlease enter message: "); // prompts entry of the message 
+    scanf("%[^\n]s", ci); // scans the message
+    
       for (i = 0; ci[i] != 0; i++) {
           if (ci[i] >= 97 && ci[i] <= 122) {
               ci[i] = ci[i] - 32;
@@ -107,14 +104,19 @@ void rotdecrypt (char ci[]) {
           if (ci[i] >= 65 && ci[i] <= 90) {
               ci[i] = ci[i] - 65;
               n = ci[i];
-              ci[i] = cipheralphabet[n];
-              
-              }
+              ci[i] = cipheralphabet[n];   
+          }
               printf("%c", ci[i]);
           }
         }
   
-  void subdecrypt (char ci[]){
+  void subdecrypt (char ci[]) {
+      
+      char ci[500];
+      int i, n;
+      char cipheralphabet[26] = {"QWERTYUIOPASDFGHJKLZXCVBNM"};
+      
+      
       
   }
   
