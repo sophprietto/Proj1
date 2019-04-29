@@ -40,7 +40,7 @@ int main (void) {
      default: // if none of the abvove cases are chose the default will run to prompt the user to choose the correct function
       printf("Please choose a function between 0 and 3."); // prompt for user 
       break;
-}
+    }
 }
 void rotencrypt (char ci[]) {
 
@@ -128,16 +128,16 @@ void rotdecrypt (char ci[]) {
     scanf("%[^\n]s", ci); // scans the message
     
       for (i = 0; ci[i] != 0; i++) {
-          if (ci[i] >= 97 && ci[i] <= 122) {
-               ci[i] = ci[i] - 32;
+          if (ci[i] >= 97 && ci[i] <= 122) { // identifies lowecase ASCII characters
+               ci[i] = ci[i] - 32;// changes lowercase ASCII characters to uppercase
            }
          if (ci[i] >= 65 && ci[i] <= 90) {
-             n = 0;
+             n = 0; // makes array being at the start, and resets every time the loop runs 
              
              while (ci[i] != cipheralphabet[n]) {
-              n = n + 1;
+              n = n + 1; // adds one to the array to move characters
            }
-           n = n + 65;
+           n = n + 65; // converts back into ASCII characters
            ci[i] = n; 
          }
 
