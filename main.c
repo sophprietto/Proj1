@@ -7,7 +7,7 @@ void subdecrypt (char ci[]); //this function when called will decrypt a substitu
 
 int main (void) {
   char ci[500];
-  int funct, n, i; 
+  int funct; 
   
 
   printf("Choose 0 for a rotation encryption, and 1 for decryption.\nChoose 2 for a substitution encryption, and 3 for a decryption.\n");
@@ -100,14 +100,13 @@ void rotdecrypt (char ci[]) {
       char cipheralphabet[26] = {"QWERTYUIOPASDFGHJKLZXCVBNM"};
       
 
-      for (i = 0; ci[i] != '\0'; i++) {
-        scanf("%c", ci[i]);
+      for (i = 0; ci[i] != 0; i++) {
           if (ci[i] >= 97 && ci[i] <= 122) {
               ci[i] = ci[i] - 32;
           }
           if (ci[i] >= 65 && ci[i] <= 90) {
               ci[i] = ci[i] - 65;
-              key = ci[i];
+              n = ci[i];
               ci[i] = cipheralphabet[n];
               
               }
