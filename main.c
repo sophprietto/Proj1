@@ -121,6 +121,9 @@ void rotdecrypt (char ci[]) {
       char ci[500];
       char cipheralphabet[26] = {"QWERTYUIOPASDFGHJKLZXCVBNM"};
     
+      printf("\nPlease enter message: "); // prompts entry of the message 
+      scanf("%[^\n]s", ci); // scans the message
+    
       for (i = 0; ci[i] != 0; i++) {
           if (ci[i] >= 97 && ci[i] <= 122) {
                ci[i] = ci[i] - 32;
