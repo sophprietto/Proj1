@@ -103,7 +103,7 @@ void rotdecrypt (char ci[]) {
       
     printf("\nPlease enter message: "); // prompts entry of the message 
     scanf("%[^\n]s", ci); // scans the message
-    
+    printf("\nEncrypted message: ");
       for (i = 0; ci[i] != 0; i++) {
           if (ci[i] >= 97 && ci[i] <= 122) { // 
               ci[i] = ci[i] - 32;
@@ -140,7 +140,7 @@ void rotdecrypt (char ci[]) {
            ci[i] = n; 
          }
 
-printf("%c", ci[i]);
+printf("\n Decrypted message: %c", ci[i]);
     }
    }
 
