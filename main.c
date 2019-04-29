@@ -131,7 +131,7 @@ void rotdecrypt (char ci[]) {
          if (ci[i] >= 65 && ci[i] <= 90) {
              n = 0;
              
-             while (ci[i] != cipheralphabet[i]) {
+             while (ci[i] != cipheralphabet[n]) {
               n = n + 1;
            }
            n = n + 65;
