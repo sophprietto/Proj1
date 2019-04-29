@@ -1,4 +1,4 @@
-/* 
+/* Sophie Prietto C3324702
  
  */
 
@@ -89,7 +89,7 @@ void rotdecrypt (char ci[]) {
           ci[i] = ci[i] - key; //minuses key to rotate cipher
 
     if(ci[i] < 65) {
-        ci[i] = ci[i] + 26;
+        ci[i] = ci[i] + 26; // if the code goes lower than 65 26 will be added to bring it back to an uppercase letter 
         }
       }  
     }
@@ -99,17 +99,18 @@ void rotdecrypt (char ci[]) {
       
       char ci[500]; 
       int i, n;
-      char cipheralphabet[26] = {"QWERTYUIOPASDFGHJKLZXCVBNM"};
+      char cipheralphabet[26] = {"QWERTYUIOPASDFGHJKLZXCVBNM"}; // alphabet that would be substituted for the message 
       
     printf("\nPlease enter message: "); // prompts entry of the message 
     scanf("%[^\n]s", ci); // scans the message
-    printf("\nEncrypted message: ");
+    printf("\nEncrypted message: "); 
+    
       for (i = 0; ci[i] != 0; i++) {
-          if (ci[i] >= 97 && ci[i] <= 122) { // 
-              ci[i] = ci[i] - 32;
+          if (ci[i] >= 97 && ci[i] <= 122) { // identifies lowercase ASCII characters 
+              ci[i] = ci[i] - 32; // changes lowercase ASCII characters to uppercase
           }
-          if (ci[i] >= 65 && ci[i] <= 90) {
-              ci[i] = ci[i] - 65;
+          if (ci[i] >= 65 && ci[i] <= 90) { //identifies uppercase ASCII charcters
+              ci[i] = ci[i] - 65;// minuses 65 to 
               n = ci[i];
               ci[i] = cipheralphabet[n];   
           }
