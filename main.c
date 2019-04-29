@@ -93,11 +93,11 @@ void rotdecrypt (char ci[]) {
   printf ("\nDecrypted text: %s", ci);
 }
   void subencrypt () {
-       char ci[500]; 
+      char ci[500]; 
     printf("\nPlease enter message: "); // prompts entry of the message 
     scanf("%[^\n]s", ci); // scans the message
       int i, n;
-      char cipheralphabet[26] = {"QWERTYUIOPLKJHGFDSAZXCVBNM"};
+      char cipheralphabet[26] = {"QWERTYUIOPASDFGHJKLZXCVBNM"};
       
 
       for (i = 0; ci[i] != '\0'; i++) {
