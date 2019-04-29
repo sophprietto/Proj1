@@ -1,8 +1,9 @@
 /* Sophie Prietto C3324702
  Programming Assignment: ENGG 1003
- 
+ Input is scanned through the terminal. 
+ Encryption and decryption between the two ciphers are chosen through interaction with a switch casefunction in the terminal.
+ There are 4 differnet functions which execute the rotataion encryption, decryption, and the substitution encryption and decryption.
  */
-
 
 void rotencrypt (char ci[]); //this funcion will be called to encrypt a rotation cipher
 void rotdecrypt (char ci[]); //this function will be called to decrypt a rotation cipher
@@ -38,8 +39,8 @@ int main (void) {
     printf("Enter key (26 different uppercase characters), followed by a space, followed by a message:\n");// prompts entry of the message 
       subdecrypt();
       break; // code exits after execution of function
-     default: // if none of the abvove cases are chose the default will run to prompt the user to choose the correct function
-      printf("Please choose a function between 0 and 3."); // prompt for user 
+    default: // if none of the abvove cases are chose the default will run to prompt the user to choose the correct function
+    printf("Please choose a function between 0 and 3."); // prompt for user 
       break;
     }
     printf("\n");
