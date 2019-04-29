@@ -1,3 +1,8 @@
+/* 
+ 
+ */
+
+
 void rotencrypt (char ci[]); //this funcion will be called to encrypt a rotation cipher
 void rotdecrypt (char ci[]); //this function will be called to decrypt a rotation cipher
 void subencrypt (void); //this function when called will encrypt a substitution cipher
@@ -109,14 +114,28 @@ void rotdecrypt (char ci[]) {
               printf("%c", ci[i]);
           }
         }
-  
-  void subdecrypt (char ci[]) {
+    
+    void subdecrypt () {
       
+      int i;
       char ci[500];
-      int i, n;
       char cipheralphabet[26] = {"QWERTYUIOPASDFGHJKLZXCVBNM"};
-      
-      
-      
-  }
+    
+      for (i = 0; ci[i] != 0; i++) {
+          if (ci[i] >= 97 && ci[i] <= 122) {
+               ci[i] = ci[i] - 32;
+           }
+         if (ci[i] >= 65 && ci[i] <= 90) {
+             int n = 0;
+             
+             while (ci[i] != cipheralphabet[i]) {
+               n = n + 1;
+           }
+           n = n + 65;
+           ci[i] = n; 
+         }
+printf("%c", ci[i]);
+    }
+  } 
+
   
