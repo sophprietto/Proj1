@@ -32,10 +32,10 @@ int main (void) {
     rotdecrypt (ci); // calls the function which decrypts
       break; // code exits after exectution of function 1
     case 2: //calls the function which will encrypt a substitution cipher
-      subencrypt ();
+      subencrypt();
       break;// code exits after execution of function
     case 3: //calls the function which will decrypt a substitution cipher
-      subdecrypt ();
+      subdecrypt();
       break; // code exits after execution of function
     }
 }
@@ -117,19 +117,19 @@ void rotdecrypt (char ci[]) {
         
     void subdecrypt () {
       
-      int i;
-      char ci[500];
+      char ci[500]; 
+      int i, n;
       char cipheralphabet[26] = {"QWERTYUIOPASDFGHJKLZXCVBNM"};
-    
-      printf("\nPlease enter message: "); // prompts entry of the message 
-      scanf("%[^\n]s", ci); // scans the message
+      
+    printf("\nPlease enter message: "); // prompts entry of the message 
+    scanf("%[^\n]s", ci); // scans the message
     
       for (i = 0; ci[i] != 0; i++) {
           if (ci[i] >= 97 && ci[i] <= 122) {
                ci[i] = ci[i] - 32;
            }
          if (ci[i] >= 65 && ci[i] <= 90) {
-             int n = 0;
+             n = 0;
              
              while (ci[i] != cipheralphabet[i]) {
               n = n + 1;
@@ -137,8 +137,8 @@ void rotdecrypt (char ci[]) {
            n = n + 65;
            ci[i] = n; 
          }
-printf("%c", ci[i]);
 
+printf("%c", ci[i]);
     }
   } 
 
