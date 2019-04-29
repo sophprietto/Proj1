@@ -18,7 +18,7 @@ int main (void) {
   printf("\nRotation Encryption = 0.\nRotation Decryption = 1.\nSubstitution Encryption = 2.\nSubstition Decryption = 3.\n");
   printf("Function choice: ");
   scanf("%d", &funct); //scans input for function choice
-  printf("PEnter key followed by message: "); // prompts entry of the message 
+  printf("Enter key followed by a space followed by the message: "); // prompts entry of the message 
 
 /* the switch case calls the function which will be used to encrypt of decrypt the message inputted by the user */
 
@@ -46,9 +46,9 @@ void rotencrypt (char ci[]) {
 
   int i, key;
   
-  printf ("Enter key: "); //decides the amount the cipher will rotate by
+
   scanf ("%d", &key);
-  printf("\nPlease enter message: "); // prompts entry of the message 
+  
     scanf("%[^\n]s", ci); // scans the message
   
 
