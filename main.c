@@ -1,4 +1,5 @@
 /* Sophie Prietto C3324702
+ Programming Assignment: ENGG 1003
  
  */
 
@@ -13,17 +14,16 @@ void subdecrypt (void); //this function when called will decrypt a substitution 
 int main (void) {
   char ci[500];
   int funct; 
-  
-  printf("Choose 0 for a rotation encryption, and 1 for decryption.\nChoose 2 for a substitution encryption, and 3 for a decryption.\n");
-  printf("Please choose a function to execute: "); // prompts choice of function to use after input of text
-  scanf("%d\n", &funct); //scans input for function choice
+  printf("Please choose a function to execute:");
+  printf("\nRotation Encryption = 0.\nRotation Decryption = 1.\nSubstitution Encryption = 2.\nSubstition Decryption = 3.\n");
+  printf("Function choice: ");
+  scanf("%d", &funct); //scans input for function choice
+  printf("PEnter key followed by message: "); // prompts entry of the message 
 
 /* the switch case calls the function which will be used to encrypt of decrypt the message inputted by the user */
 
   switch (funct) { 
     case 0: // when 0 is inputted it will call this function
-       printf("\nPlease enter message: "); // prompts entry of the message 
-    scanf("%[^\n]s", ci); // scans the message
     rotencrypt (ci); // calls the function which will encrypt a rotation cipher
       break; // code exits after execution of function 0
     case 1: // when 1 is inputted it will call this function
@@ -45,9 +45,12 @@ int main (void) {
 void rotencrypt (char ci[]) {
 
   int i, key;
-
-  printf ("\nEnter key: "); //decides the amount the cipher will rotate by
+  
+  printf ("Enter key: "); //decides the amount the cipher will rotate by
   scanf ("%d", &key);
+  printf("\nPlease enter message: "); // prompts entry of the message 
+    scanf("%[^\n]s", ci); // scans the message
+  
 
   for (i = 0; ci[i] != '\0'; i++) {
 
@@ -66,8 +69,9 @@ void rotencrypt (char ci[]) {
         }
       }
     }
-  printf ("\nEncrypted text: %s", ci);
+  printf ("\nEncrypted text: %s.", ci);
 }
+
 
 void rotdecrypt (char ci[]) {
 
@@ -101,7 +105,7 @@ void rotdecrypt (char ci[]) {
       int i, n;
       char cipheralphabet[26] = {"QWERTYUIOPASDFGHJKLZXCVBNM"}; // alphabet that would be substituted for the message 
       
-    printf("\nPlease enter message: "); // prompts entry of the message 
+
     scanf("%[^\n]s", ci); // scans the message
     printf("\nEncrypted message: "); 
     
