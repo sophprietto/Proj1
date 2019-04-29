@@ -37,6 +37,7 @@ int main (void) {
     case 3: //calls the function which will decrypt a substitution cipher
       subdecrypt();
       break; // code exits after execution of function
+     default: ("Please choose a function between 0 and 4.)
     }
 }
 
