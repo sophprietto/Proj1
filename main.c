@@ -18,17 +18,16 @@ int main (void) {
   printf("\nRotation Encryption = 0.\nRotation Decryption = 1.\nSubstitution Encryption = 2.\nSubstition Decryption = 3.\n");
   printf("Function choice: ");
   scanf("%d", &funct); //scans input for function choice
-  
 
 /* the switch case calls the function which will be used to encrypt of decrypt the message inputted by the user */
 
   switch (funct) { 
     case 0: // when 0 is inputted it will call this function
-    printf("Enter key (integer), followed by a space, followed by a message:\n");// prompts entry of the message 
+    printf("Enter key (integer), followed by a single space, followed by a message:\n");// prompts entry of the message 
     rotencrypt (ci); // calls the function which will encrypt a rotation cipher
       break; // code exits after execution of function 0
     case 1: // when 1 is inputted it will call this function 
-    printf("Enter key (integer), followed by a space, followed by a message:\n");// prompts entry of the message 
+    printf("Enter key (integer), followed by a single space, followed by a message:\n");// prompts entry of the message 
     rotdecrypt (ci); // calls the function which decrypts
       break; // code exits after exectution of function 1
     case 2: //calls the function which will encrypt a substitution cipher
@@ -48,14 +47,12 @@ int main (void) {
 void rotencrypt (char ci[]) {
 
   int i, key;
-  
 
   scanf ("%d", &key);
   scanf("%[^\n]s", ci); // scans the message
-  
 
   for (i = 0; ci[i] != '\0'; i++) {
-
+      
     if (ci[i] >= 97 && ci[i] <= 122) { //identifies lowercase ASCII charcters	
         ci[i] = ci[i] + key - 32 ; // changes lowercase ASCII characters to uppercase and rotates
 
@@ -73,7 +70,6 @@ void rotencrypt (char ci[]) {
     }
   printf ("\nEncrypted text: %s.", ci);
 }
-
 
 void rotdecrypt (char ci[]) {
 
@@ -101,14 +97,12 @@ void rotdecrypt (char ci[]) {
     }
   printf ("\nDecrypted text: %s", ci);
 }
-  void subencrypt () {
+void subencrypt () {
       
-      char ci[500]; 
-      int i, n;
-      char cipheralphabet[26]; // alphabet that would be substituted for the message 
+    char ci[500]; 
+    int i, n;
+    char cipheralphabet[26]; // alphabet that would be substituted for the message 
       
-
-    
     scanf("%s", cipheralphabet);
     scanf("%[^\n]s", ci);
     printf("\nEncrypted message: "); 
@@ -126,16 +120,16 @@ void rotdecrypt (char ci[]) {
           }
         }
         
-    void subdecrypt () {
+void subdecrypt () {
       
-      char ci[500]; 
-      int i, n;
-      char cipheralphabet[26];
-      
+    char ci[500]; 
+    int i, n;
+    char cipheralphabet[26];
      
-      scanf("%s", cipheralphabet);
-      scanf("%[^\n]s", ci); // scans the message
-      printf("Decrypted Message: ");
+    scanf("%s", cipheralphabet);
+    scanf("%[^\n]s", ci); // scans the message
+    printf("Decrypted Message: ");
+    
       for (i = 0; ci[i] != 0; i++) {
           if (ci[i] >= 97 && ci[i] <= 122) { // identifies lowecase ASCII characters
                ci[i] = ci[i] - 32;// changes lowercase ASCII characters to uppercase
@@ -152,6 +146,6 @@ void rotdecrypt (char ci[]) {
 
 printf("%c", ci[i]);
     }
-   }
+  }
 
   
