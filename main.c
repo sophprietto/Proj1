@@ -37,10 +37,11 @@ int main (void) {
     case 3: //calls the function which will decrypt a substitution cipher
       subdecrypt();
       break; // code exits after execution of function
-     default: ("Please choose a function between 0 and 4.)
-    }
+     default: 
+      printf("Please choose a function between 0 and 3."); 
+      break;
 }
-
+}
 void rotencrypt (char ci[]) {
 
   int i, key;
@@ -141,6 +142,6 @@ void rotdecrypt (char ci[]) {
 
 printf("%c", ci[i]);
     }
-  } 
+   }
 
   
