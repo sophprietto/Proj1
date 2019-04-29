@@ -1,34 +1,37 @@
 void rotencrypt (char ci[]); //this funcion will be called to encrypt a rotation cipher
 void rotdecrypt (char ci[]); //this function will be called to decrypt a rotation cipher
-void subencrypt (char ci[]); //this function when called will encrypt a substitution cipher
+void subencrypt (void); //this function when called will encrypt a substitution cipher
 void subdecrypt (char ci[]); //this function when called will decrypt a substitution cipher
 
 #include<stdio.h>
 
 int main (void) {
-  char ci[500]; //"ci[500]" represents a string of characters
+  char ci[500];
   int funct, n, i; 
-  char cipheralphabet[26] = {"QWERTYUIOPLKJHGFDSAZXCVBNM"};
+  
 
   printf("Choose 0 for a rotation encryption, and 1 for decryption.\nChoose 2 for a substitution encryption, and 3 for a decryption.\n");
   printf("Please choose a function to execute: "); // prompts choice of function to use after input of text
   scanf("%d\n", &funct); //scans message
 
-  printf("\nPlease enter message: "); // prompts entry of the message 
-  scanf("%[^\n]s", ci); // scans the message
+  
 
 
 /* the switch case calls the function which will be used to encrypt of decrypt the message inputted by the user */
 
   switch (funct) { 
     case 0: // when 0 is inputted it will call this function
-      rotencrypt (ci); // calls the function which will encrypt a rotation cipher
+       printf("\nPlease enter message: "); // prompts entry of the message 
+    scanf("%[^\n]s", ci); // scans the message
+    rotencrypt (ci); // calls the function which will encrypt a rotation cipher
       break; // code exits after execution of function 0
     case 1: // when 1 is inputted it will call this function
-      rotdecrypt (ci); // calls the function which decrypts
+      printf("\nPlease enter message: "); // prompts entry of the message 
+    scanf("%[^\n]s", ci); // scans the message
+    rotdecrypt (ci); // calls the function which decrypts
       break; // code exits after exectution of function 1
     case 2: //calls the function which will encrypt a substitution cipher
-      subencrypt (ci);
+      subencrypt ();
       break;// code exits after execution of function
     case 3: //calls the function which will decrypt a substitution cipher
       subdecrypt (ci);
@@ -89,14 +92,16 @@ void rotdecrypt (char ci[]) {
     }
   printf ("\nDecrypted text: %s", ci);
 }
-  void subencrypt (char ci[]) {
-
-      int i, key;
+  void subencrypt () {
+       char ci[500]; 
+    printf("\nPlease enter message: "); // prompts entry of the message 
+    scanf("%[^\n]s", ci); // scans the message
+      int i, n;
+      char cipheralphabet[26] = {"QWERTYUIOPLKJHGFDSAZXCVBNM"};
       
-      scanf("%c", ci);
 
       for (i = 0; ci[i] != '\0'; i++) {
-
+        scanf("%c", ci[i]);
           if (ci[i] >= 97 && ci[i] <= 122) {
               ci[i] = ci[i] - 32;
           }
