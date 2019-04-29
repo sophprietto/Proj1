@@ -148,5 +148,5 @@ void subdecrypt () {
 printf("%c", ci[i]);
     }
   }
-
+ 
   
