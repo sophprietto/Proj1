@@ -37,8 +37,8 @@ int main (void) {
     case 3: //calls the function which will decrypt a substitution cipher
       subdecrypt();
       break; // code exits after execution of function
-     default: 
-      printf("Please choose a function between 0 and 3."); 
+     default: // if none of the abvove cases are chose the default will run to prompt the user to choose the correct function
+      printf("Please choose a function between 0 and 3."); // prompt for user 
       break;
 }
 }
