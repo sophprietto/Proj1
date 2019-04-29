@@ -16,7 +16,7 @@ int main (void) {
   
   printf("Choose 0 for a rotation encryption, and 1 for decryption.\nChoose 2 for a substitution encryption, and 3 for a decryption.\n");
   printf("Please choose a function to execute: "); // prompts choice of function to use after input of text
-  scanf("%d\n", &funct); //scans message
+  scanf("%d\n", &funct); //scans input for function choice
 
 /* the switch case calls the function which will be used to encrypt of decrypt the message inputted by the user */
 
@@ -103,7 +103,7 @@ void rotdecrypt (char ci[]) {
     scanf("%[^\n]s", ci); // scans the message
     
       for (i = 0; ci[i] != 0; i++) {
-          if (ci[i] >= 97 && ci[i] <= 122) {
+          if (ci[i] >= 97 && ci[i] <= 122) { // 
               ci[i] = ci[i] - 32;
           }
           if (ci[i] >= 65 && ci[i] <= 90) {
@@ -114,7 +114,7 @@ void rotdecrypt (char ci[]) {
               printf("%c", ci[i]);
           }
         }
-    
+        
     void subdecrypt () {
       
       int i;
@@ -129,12 +129,13 @@ void rotdecrypt (char ci[]) {
              int n = 0;
              
              while (ci[i] != cipheralphabet[i]) {
-               n = n + 1;
+              n = n + 1;
            }
            n = n + 65;
            ci[i] = n; 
          }
 printf("%c", ci[i]);
+
     }
   } 
 
