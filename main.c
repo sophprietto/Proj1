@@ -18,29 +18,32 @@ int main (void) {
   printf("\nRotation Encryption = 0.\nRotation Decryption = 1.\nSubstitution Encryption = 2.\nSubstition Decryption = 3.\n");
   printf("Function choice: ");
   scanf("%d", &funct); //scans input for function choice
-  printf("Enter key followed by a space followed by the message: "); // prompts entry of the message 
+  
 
 /* the switch case calls the function which will be used to encrypt of decrypt the message inputted by the user */
 
   switch (funct) { 
     case 0: // when 0 is inputted it will call this function
+    printf("Enter key (integer), followed by a space, followed by a message:\n");// prompts entry of the message 
     rotencrypt (ci); // calls the function which will encrypt a rotation cipher
       break; // code exits after execution of function 0
-    case 1: // when 1 is inputted it will call this function
-      printf("\nPlease enter message: "); // prompts entry of the message 
-    scanf("%[^\n]s", ci); // scans the message
+    case 1: // when 1 is inputted it will call this function 
+    printf("Enter key (integer), followed by a space, followed by a message:\n");// prompts entry of the message 
     rotdecrypt (ci); // calls the function which decrypts
       break; // code exits after exectution of function 1
     case 2: //calls the function which will encrypt a substitution cipher
+    printf("Enter key (26 different uppercase characters), followed by a space, followed by a message:\n");// prompts entry of the message 
       subencrypt();
       break;// code exits after execution of function
     case 3: //calls the function which will decrypt a substitution cipher
+    printf("Enter key (26 different uppercase characters), followed by a space, followed by a message:\n");// prompts entry of the message 
       subdecrypt();
       break; // code exits after execution of function
      default: // if none of the abvove cases are chose the default will run to prompt the user to choose the correct function
       printf("Please choose a function between 0 and 3."); // prompt for user 
       break;
     }
+    printf("\n");
 }
 void rotencrypt (char ci[]) {
 
@@ -48,8 +51,7 @@ void rotencrypt (char ci[]) {
   
 
   scanf ("%d", &key);
-  
-    scanf("%[^\n]s", ci); // scans the message
+  scanf("%[^\n]s", ci); // scans the message
   
 
   for (i = 0; ci[i] != '\0'; i++) {
@@ -77,8 +79,8 @@ void rotdecrypt (char ci[]) {
 
   int i, key;
 
-  printf ("\nEnter key: "); //decides the amount the cipher will rotate by
   scanf ("%d", &key);
+  scanf("%[^\n]s", ci);
 
   for (i = 0; ci[i] != '\0'; i++) {
 
@@ -103,10 +105,12 @@ void rotdecrypt (char ci[]) {
       
       char ci[500]; 
       int i, n;
-      char cipheralphabet[26] = {"QWERTYUIOPASDFGHJKLZXCVBNM"}; // alphabet that would be substituted for the message 
+      char cipheralphabet[26]; // alphabet that would be substituted for the message 
       
 
-    scanf("%[^\n]s", ci); // scans the message
+    
+    scanf("%s", cipheralphabet);
+    scanf("%[^\n]s", ci);
     printf("\nEncrypted message: "); 
     
       for (i = 0; ci[i] != 0; i++) {
@@ -126,11 +130,12 @@ void rotdecrypt (char ci[]) {
       
       char ci[500]; 
       int i, n;
-      char cipheralphabet[26] = {"QWERTYUIOPASDFGHJKLZXCVBNM"};
+      char cipheralphabet[26];
       
-    printf("\nPlease enter message: "); // prompts entry of the message 
-    scanf("%[^\n]s", ci); // scans the message
-    
+     
+      scanf("%s", cipheralphabet);
+      scanf("%[^\n]s", ci); // scans the message
+      printf("Decrypted Message: ");
       for (i = 0; ci[i] != 0; i++) {
           if (ci[i] >= 97 && ci[i] <= 122) { // identifies lowecase ASCII characters
                ci[i] = ci[i] - 32;// changes lowercase ASCII characters to uppercase
@@ -145,7 +150,7 @@ void rotdecrypt (char ci[]) {
            ci[i] = n; 
          }
 
-printf("\n Decrypted message: %c", ci[i]);
+printf("%c", ci[i]);
     }
    }
 
